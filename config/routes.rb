@@ -6,21 +6,21 @@ Rails.application.routes.draw do
     root to: "home#index"
     resources :admins
     resources :users, only: :index
-    #resources :posts, only: [:index, :show]
+    resources :posts, only: [:index, :show]
   end
 
   root to: "user/timeline#index"
 
   namespace :user do
-    #get 'profile', to: "profile#show"
+    get 'profile', to: "profile#show"
     #get 'potential_to_follow', to: "profile#potential_to_follow"
     #get 'following', to: "profile#following"
     #get 'followers', to: "profile#followers"
-    #resources :posts, only: [:create, :destroy] do
+    resources :posts, only: [:create, :destroy] do
       #member do
         #post :like_toggle
       #end
-    #end
+    end
     #resources :users, only: :show
     #resources :comments, only: [:create, :destroy]
 
