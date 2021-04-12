@@ -22,7 +22,7 @@ class Admin::AdminsController < AdminController
     def edit
     end
   
-    def update      
+    def update
       params = form_params.to_h
       params = params.except!(:password, :password_confirmation) if params[:password].blank?
   
