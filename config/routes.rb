@@ -16,13 +16,13 @@ Rails.application.routes.draw do
     get 'potential_to_follow', to: "profile#potential_to_follow"    
     get 'following', to: "profile#following"
     get 'followers', to: "profile#followers"
-    resources :posts, only: :create
+    resources :posts, only: [:create, :destroy]
     #resources :posts, only: [:create, :destroy] do
       #member do
         #post :like_toggle
       #end
     #end
-    #resources :users, only: :show
+    resources :users, only: :show
     #resources :comments, only: [:create, :destroy]
 
     post 'follow/:id', to: "subscriptions#follow", as: :follow
