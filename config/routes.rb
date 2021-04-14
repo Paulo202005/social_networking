@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :user do
     get 'profile', to: "profile#show"
-    get 'potential_to_follow', to: "profile#potential_to_follow"    
+    get 'potential_to_follow', to: "profile#potential_to_follow"
     get 'following', to: "profile#following"
     get 'followers', to: "profile#followers"
     resources :posts, only: [:create, :destroy] do

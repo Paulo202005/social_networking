@@ -1,10 +1,10 @@
 class User::CommentsController < UserController
 
   def create
-    f_params = form_params.merge(user: current_user)
+    f_params = form_params.merge(user: current_user)    
     @comment = Comment.new(f_params)
     @post = @comment.post
-
+    
     if @comment.save
       respond_to do |format|
         format.js { render "create" }
